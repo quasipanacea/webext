@@ -1,0 +1,15 @@
+{
+  "name": "webext",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Edwin Kofler <edwin@kofler.dev> (https://edwinkofler.com)",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@parcel/config-webextension": "^2.7.0",
+    "parcel": "^2.7.0"
+  }
+}
