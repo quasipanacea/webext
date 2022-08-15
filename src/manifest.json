@@ -1,0 +1,25 @@
+{
+	"manifest_version": 3,
+	"name": "Kaxon Extension",
+	"version": "0.0.1",
+	"background": {
+		"service_worker": "./scripts/background.js",
+		"type": "module"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://*.youtube.com/*",
+				"*://google.com/*",
+				"*://edwinkofler.com/*"
+			],
+			"js": ["./content_scripts/youtube.ts"]
+		}
+	],
+	"web_accessible_resources": [
+		{
+			"matches": ["<all_urls>"],
+			"resources": ["./content_scripts/template.html"]
+		}
+	]
+}
