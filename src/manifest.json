@@ -1,25 +1,28 @@
 {
 	"manifest_version": 3,
 	"name": "Kaxon Extension",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"background": {
-		"service_worker": "./scripts/background.js",
+		"service_worker": "./scripts/background.ts",
 		"type": "module"
 	},
 	"content_scripts": [
 		{
-			"matches": [
-				"https://*.youtube.com/*",
-				"*://google.com/*",
-				"*://edwinkofler.com/*"
-			],
-			"js": ["./content_scripts/youtube.ts"]
+			"matches": ["https://*.youtube.com/*"],
+			"js": ["./content_scripts/overlay.ts"],
+			"css": ["./content_scripts/overlay.css"]
 		}
 	],
-	"web_accessible_resources": [
-		{
-			"matches": ["<all_urls>"],
-			"resources": ["./content_scripts/template.html"]
-		}
-	]
+	"permissions": ["nativeMessaging"],
+	"action": {
+		"default_icon": {
+			"16": "./icons/icon-16.png",
+			"24": "./icons/icon-24.png",
+			"32": "./icons/icon-32.png",
+			"64": "./icons/icon-64.png",
+			"128": "./icons/icon-128.png"
+		},
+		"default_title": "Kaxon",
+		"default_popup": "popup/popup.html"
+	}
 }

@@ -1,0 +1,23 @@
+.kaxon-overlay-outer {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 500px;
+	height: 300px;
+	z-index: 10000000;
+	margin-block-start: 40px;
+	border-radius: 5px;
+}
+
+.kaxon-overlay {
+	background-color: lightpink;
+	color: black;
+	height: 100%;
+	padding: 10px;
+}
+
+.kaxon-container {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
