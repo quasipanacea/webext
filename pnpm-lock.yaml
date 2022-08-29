@@ -2,10 +2,16 @@ lockfileVersion: 5.4
 
 specifiers:
   '@parcel/config-webextension': ^2.7.0
+  '@types/webextension-polyfill': ^0.9.0
   parcel: ^2.7.0
+  webextension-polyfill: ^0.10.0
+
+dependencies:
+  webextension-polyfill: 0.10.0
 
 devDependencies:
   '@parcel/config-webextension': 2.7.0
+  '@types/webextension-polyfill': 0.9.0
   parcel: 2.7.0
 
 packages:
@@ -1152,6 +1158,10 @@ packages:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: true
 
+  /@types/webextension-polyfill/0.9.0:
+    resolution: {integrity: sha512-HG1y1o2hK8ag6Y7dfkrAbfKmMIP+B0E6SwAzUfmQ1dDxEIdLTtMyrStY26suHBPrAL7Xw/chlDW02ugc3uXWtQ==}
+    dev: true
+
   /abortcontroller-polyfill/1.7.3:
     resolution: {integrity: sha512-zetDJxd89y3X99Kvo4qFx8GKlt6GsvN3UcRZHwU6iFA/0KiOmhkTVhe8oRoTBiTVPZu09x3vCra47+w8Yz1+2Q==}
     dev: true
@@ -1779,6 +1789,10 @@ packages:
   /weak-lru-cache/1.2.2:
     resolution: {integrity: sha512-DEAoo25RfSYMuTGc9vPJzZcZullwIqRDSI9LOy+fkCJPi6hykCnfKaXTuPBDuXAUcqHXyOgFtHNp/kB2FjYHbw==}
     dev: true
+
+  /webextension-polyfill/0.10.0:
+    resolution: {integrity: sha512-c5s35LgVa5tFaHhrZDnr3FpQpjj1BB+RXhLTYUxGqBVN460HkbM8TBtEqdXWbpTKfzwCcjAZVF7zXCYSKtcp9g==}
+    dev: false
 
   /xxhash-wasm/0.4.2:
     resolution: {integrity: sha512-/eyHVRJQCirEkSZ1agRSCwriMhwlyUcFkXD5TPVSLP+IPzjsqMVzZwdoczLp1SoQU0R3dxz1RpIK+4YNQbCVOA==}

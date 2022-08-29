@@ -1,4 +1,4 @@
-.kaxon-overlay-outer {
+.kaxon-overlay {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -7,9 +7,19 @@
 	z-index: 10000000;
 	margin-block-start: 40px;
 	border-radius: 5px;
+
+	transition: 100ms ease-in-out;
+	transition-property: opacity, translate;
 }
 
-.kaxon-overlay {
+.kaxon-overlay.hide {
+	opacity: 0;
+	translate: 20px;
+	transition: 80ms ease-in-out;
+	transition-property: opacity, translate;
+}
+
+.kaxon-overlay-inner {
 	background-color: lightpink;
 	color: black;
 	height: 100%;

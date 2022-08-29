@@ -1,4 +1,6 @@
-let port = chrome.runtime.connectNative('dev.kofler.kaxon.native')
+import * as browser from 'webextension-polyfill'
+
+let port = browser.runtime.connectNative('dev.kofler.kaxon.native')
 port.onMessage.addListener((response) => {
 	console.info('got response:', response)
 })
