@@ -1,4 +1,11 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+}
+
 body {
-	width: 900px;
-	height: 900px;
+	min-width: 640px;
+	min-height: 360px;
 }
