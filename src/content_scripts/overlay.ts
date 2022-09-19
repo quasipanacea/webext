@@ -19,13 +19,15 @@ import * as browser from 'webextension-polyfill'
 
 async function addOverlay() {
 	const templateText = `
-<div class="kaxon-overlay">
-	<div class="kaxon-overlay-inner">
-		<h1>Kaxon</h1>
-			<div class="kaxon-container">
-			<p class="kaxon-current-id"></p>
-			<p class="kaxon-status"></p>
-			<a href="kaxon:///">Open Kaxon</a>
+<div class="kaxon">
+	<div class="kaxon-overlay hide">
+		<div class="kaxon-overlay-inner">
+			<h1>Kaxon</h1>
+				<div class="kaxon-container">
+				<p class="kaxon-current-id"></p>
+				<p class="kaxon-status"></p>
+				<a href="kaxon:///">Open Kaxon</a>
+			</div>
 		</div>
 	</div>
 </div>

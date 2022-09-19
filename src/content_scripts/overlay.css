@@ -17,6 +17,7 @@
 	translate: 20px;
 	transition: 80ms ease-in-out;
 	transition-property: opacity, translate;
+	visibility: hidden;
 }
 
 .kaxon-overlay-inner {
