@@ -1,5 +1,7 @@
 import * as browser from 'webextension-polyfill'
 
+let isDev = true
+
 //
 ;(async () => {
 	addListenerToPageChange(() => {
@@ -23,10 +25,12 @@ async function addOverlay() {
 	<div class="kaxon-overlay hide">
 		<div class="kaxon-overlay-inner">
 			<h1>Kaxon</h1>
+				<button class="kaxon-update-overlay">Update Overlay</button>
 				<div class="kaxon-container">
 				<p class="kaxon-current-id"></p>
 				<p class="kaxon-status"></p>
 				<a href="kaxon:///">Open Kaxon</a>
+				<span>Is in Kaxon:</span><p id="is-in-kaxon"></p>
 			</div>
 		</div>
 	</div>
@@ -38,9 +42,19 @@ async function addOverlay() {
 	const kaxonOverlay = templateEl.content.cloneNode(true)
 	const targetEl = document.body
 	targetEl.appendChild(kaxonOverlay)
+
+	document
+		.querySelector('.kaxon-update-overlay')
+		.addEventListener('click', () => {
+			updateOverlay()
+		})
 }
 
 function updateOverlay() {
+	if (isDev) {
+		console.log('update overlay')
+	}
+
 	const rootDomain = getRootDomain(globalThis.location.hostname)
 	if (rootDomain === 'youtube.com') {
 		const uniqueId = getYoutubeData()
@@ -52,14 +66,20 @@ function updateOverlay() {
 			currentIdEl.innerText = 'Current ID: ' + uniqueId.id
 		}
 
-		//
-		browser.runtime.sendMessage({
-			type: 'rpc',
-			method: 'has-youtube-id',
-			data: {
-				id: uniqueId.id,
-			},
-		})
+		// get youtube id
+		chrome.runtime
+			.sendMessage({
+				type: 'rpc',
+				method: 'has-youtube-id',
+				data: {
+					id: uniqueId.id,
+				},
+			})
+			.then(() => {
+				const err = browser.runtime.lastError
+
+				if (err) console.log('could not get youtube id', err)
+			})
 	}
 }
 
