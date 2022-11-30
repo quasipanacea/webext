@@ -4,6 +4,7 @@ task.dev() {
 	find -L . -ignore_readdir_race \( -iname 'node_modules' -o -iname 'dist' -o -iname 'out' -o -iname 'target' \) -prune -o -print | entr -c bake build
 }
 
+# watch: -r
 task.build() {
 	rm -rf dist/*
 	pnpm parcel build --no-optimize src/manifest.json
