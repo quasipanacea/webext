@@ -13,7 +13,7 @@ let isDev = true
 
 	document.addEventListener('keydown', (ev) => {
 		if (ev.ctrlKey && ev.code === 'Semicolon') {
-			const overlayEl = document.querySelector('.kaxon-overlay')
+			const overlayEl = document.querySelector('.qp-overlay')
 			overlayEl.classList.toggle('hide')
 		}
 	})
@@ -21,16 +21,16 @@ let isDev = true
 
 async function addOverlay() {
 	const templateText = `
-<div class="kaxon">
-	<div class="kaxon-overlay hide">
-		<div class="kaxon-overlay-inner">
-			<h1>Kaxon</h1>
-				<button class="kaxon-update-overlay">Update Overlay</button>
-				<div class="kaxon-container">
-				<p class="kaxon-current-id"></p>
-				<p class="kaxon-status"></p>
-				<a href="kaxon:///">Open Kaxon</a>
-				<span>Is in Kaxon:</span><p id="is-in-kaxon"></p>
+<div class="qp">
+	<div class="qp-overlay hide">
+		<div class="qp-overlay-inner">
+			<h1>Quazipanacea</h1>
+				<button class="qp-update-overlay">Update Overlay</button>
+				<div class="qp-container">
+				<p class="qp-current-id"></p>
+				<p class="qp-status"></p>
+				<a href="quazipanacea:///">Open Quazipanacea</a>
+				<span>Is in Quazipanacea:</span><p id="is-in-qp"></p>
 			</div>
 		</div>
 	</div>
@@ -39,15 +39,13 @@ async function addOverlay() {
 	const templateEl = document.createElement('template')
 	templateEl.innerHTML = templateText
 
-	const kaxonOverlay = templateEl.content.cloneNode(true)
+	const qpOverlay = templateEl.content.cloneNode(true)
 	const targetEl = document.body
-	targetEl.appendChild(kaxonOverlay)
+	targetEl.appendChild(qpOverlay)
 
-	document
-		.querySelector('.kaxon-update-overlay')
-		.addEventListener('click', () => {
-			updateOverlay()
-		})
+	document.querySelector('.qp-update-overlay').addEventListener('click', () => {
+		updateOverlay()
+	})
 }
 
 function updateOverlay() {
@@ -60,7 +58,7 @@ function updateOverlay() {
 		const uniqueId = getYoutubeData()
 
 		const currentIdEl = document.querySelector(
-			'.kaxon-current-id',
+			'.qp-current-id',
 		) as HTMLParagraphElement
 		if (currentIdEl) {
 			currentIdEl.innerText = 'Current ID: ' + uniqueId.id

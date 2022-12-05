@@ -1,4 +1,4 @@
-.kaxon-overlay {
+.qp-overlay {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -12,7 +12,7 @@
 	transition-property: opacity, translate;
 }
 
-.kaxon-overlay.hide {
+.qp-overlay.hide {
 	opacity: 0;
 	translate: 20px;
 	transition: 80ms ease-in-out;
@@ -20,14 +20,14 @@
 	visibility: hidden;
 }
 
-.kaxon-overlay-inner {
+.qp-overlay-inner {
 	background-color: lightpink;
 	color: black;
 	height: 100%;
 	padding: 10px;
 }
 
-.kaxon-container {
+.qp-container {
 	display: flex;
 	flex-direction: column;
 	gap: 5px;

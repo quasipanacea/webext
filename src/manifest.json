@@ -1,6 +1,6 @@
 {
 	"manifest_version": 3,
-	"name": "Kaxon Extension",
+	"name": "Quazipanacea Extension",
 	"version": "0.1.0",
 	"background": {
 		"service_worker": "./scripts/background.ts",
