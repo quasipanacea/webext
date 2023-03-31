@@ -24,13 +24,13 @@ async function addOverlay() {
 <div class="qp">
 	<div class="qp-overlay hide">
 		<div class="qp-overlay-inner">
-			<h1>Quazipanacea</h1>
+			<h1>Quasipanacea</h1>
 				<button class="qp-update-overlay">Update Overlay</button>
 				<div class="qp-container">
 				<p class="qp-current-id"></p>
 				<p class="qp-status"></p>
-				<a href="quazipanacea:///">Open Quazipanacea</a>
-				<span>Is in Quazipanacea:</span><p id="is-in-qp"></p>
+				<a href="quasipanacea:///">Open Quasipanacea</a>
+				<span>Is in Quasipanacea:</span><p id="is-in-qp"></p>
 			</div>
 		</div>
 	</div>
