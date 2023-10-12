@@ -89,7 +89,7 @@ function getRootDomain(url: string) {
 function t<T>(fn: () => T) {
 	try {
 		return fn()
-	} catch (err: unknown) {
+	} catch (err) {
 		console.error(err)
 	}
 }
